@@ -1,98 +1,96 @@
 .main {
+  .menu-scroll {
+    z-index: 15;
+    transform: scale(0);
+    position: fixed;
+    top: 2rem;
+    right: 2rem;
+    transition: all 0.4s ease;
+  }
 
-    .menu-scroll {
-        z-index: 15;
-        transform: scale(0);
-        position: fixed;
-        top: 2rem;
-        right: 2rem;
-        transition: all 0.4s ease;
-    }
-
-    &::before {
-        content: "";
-        position: absolute;
-        left: 0;
-        right: 0;
-        z-index: 0;
-        height: 100vh;
-        width: 100%;
-        background-image: url('/assets/images/bg_abstract.webp');
-        background-repeat: no-repeat;
-        background-size: cover;
-        opacity: .8;
-        filter: brightness(.5);
-        transition: all 0.3s ease;
-    }
-
-    background-color: linen;
+  &::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    z-index: 0;
     height: 100vh;
+    width: 100%;
+    background-image: url("./assets/images/bg_abstract.webp");
+    background-repeat: no-repeat;
+    background-size: cover;
+    opacity: 0.8;
+    filter: brightness(0.5);
+    transition: all 0.3s ease;
+  }
 
-    .country-box {
-        z-index: 2;
-        position: absolute;
-        top: 50%;
-        bottom: 0;
-        height: fit-content;
+  height: 100vh;
 
-        svg {
-            filter: drop-shadow(2px 2px 7px darkblue);
-        }
+  .country-box {
+    z-index: 2;
+    position: absolute;
+    top: 50%;
+    bottom: 0;
+    height: fit-content;
 
-        .country-text {
-            z-index: 1;
-            color: var(--second);
-            position: absolute;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            font-size: 1.6em;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            width: 100%;
-            padding-right: 3em;
-            filter: drop-shadow(2px 2px 3px darkblue);
-        }
-
-        .country-ball {
-            position: absolute;
-            right: 1.65em;
-            top: 1.6em;
-            width: 70px;
-            filter: invert(1) blur(.7px) drop-shadow(1px 1px 3px darkblue);
-            -webkit-animation: globalMove 7s infinite linear;
-            animation: globalMove 7s infinite linear;
-            -moz-animation: globalMove 7s infinite linear;
-        }
+    svg {
+      filter: drop-shadow(2px 2px 7px darkblue);
     }
 
-    .description {
-        z-index: 2;
-        position: absolute;
-        top: 50%;
-        right: 5%;
-        color: var(--second);
-        text-shadow: darkblue 2px 3px 8px;
-        filter: drop-shadow(2px 2px 3px darkblue);
+    .country-text {
+      z-index: 1;
+      color: var(--second);
+      position: absolute;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      font-size: 1.6em;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      width: 100%;
+      padding-right: 3em;
+      filter: drop-shadow(2px 2px 3px darkblue);
+    }
 
-        .header-above-h4 {
-            position: absolute;
-            left: -3vw;
-            top: -4vh;
-        }
+    .country-ball {
+      position: absolute;
+      right: 1.65em;
+      top: 1.6em;
+      width: 70px;
+      filter: invert(1) blur(0.7px) drop-shadow(1px 1px 3px darkblue);
+      -webkit-animation: globalMove 7s infinite linear;
+      animation: globalMove 7s infinite linear;
+      -moz-animation: globalMove 7s infinite linear;
+    }
+  }
 
-        h4 {
-            display: flex;
-            flex-direction: column;
-            font-size: clamp(1.55em, 2.3vw, 2.5em);
-        }
+  .description {
+    z-index: 2;
+    position: absolute;
+    top: 50%;
+    right: 5%;
+    color: var(--second);
+    text-shadow: darkblue 2px 3px 8px;
+    filter: drop-shadow(2px 2px 3px darkblue);
 
-        svg {
-            filter: drop-shadow(1px 1px 2px darkblue);
-        }
+    .header-above-h4 {
+      position: absolute;
+      left: -3vw;
+      top: -4vh;
+    }
 
-        /*        &::before {
+    h4 {
+      display: flex;
+      flex-direction: column;
+      font-size: clamp(1.55em, 2.3vw, 2.5em);
+    }
+
+    svg {
+      filter: drop-shadow(1px 1px 2px darkblue);
+    }
+
+    /*        &::before {
             content:'';
             position: absolute;
             filter: blur(75px);
@@ -104,115 +102,113 @@
 
 
         }*/
-    }
+  }
 
-    .victor {
-        .victor-name {
-            position: absolute;
-            bottom: 5%;
-            display: flex;
-            justify-content: center;
-            color: snow;
-            text-shadow: darkblue 2px 3px 8px;
-            filter: brightness(1.3) drop-shadow(4px 7px 15px darkblue);
-            width: 100%;
-            z-index: 1;
+  .victor {
+    .victor-name {
+      position: absolute;
+      bottom: 5%;
+      display: flex;
+      justify-content: center;
+      color: snow;
+      text-shadow: darkblue 2px 3px 8px;
+      filter: brightness(1.3) drop-shadow(4px 7px 15px darkblue);
+      width: 100%;
+      z-index: 1;
 
-            h1 {
-                font-size: 6em;
-                text-align: center;
-            }
-        }
-
-        .victor-image {
-            position: absolute;
-            bottom: 0;
-            display: flex;
-            justify-content: center;
-            left: 0;
-            right: 0;
-            height: 42em;
-            filter: brightness(1.1) grayscale(1) drop-shadow(4px 7px 15px darkblue);
-            transition: transform .3s cubic-bezier(0.1, 0.33, 0.66, 1);
-        }
-    }
-}
-
-.intro {
-
-    background-color: var(--second);
-    position: relative;
-    z-index: 1;
-    padding: 10rem 2rem;
-
-    h4 {
-        font-size: clamp(1.5rem, 4vw, 2.5rem);
-    }
-
-    span {
-        font-size: clamp(1rem, 3vw, 1.5rem);
-    }
-
-    .about-me {
-        display: flex;
-        justify-content: flex-end;
-        margin: 2rem 6rem;
-    }
-}
-
-.recent-works {
-    padding: 10rem 2rem;
-
-    * {
-        color: var(--second);
-        margin: 0;
-    }
-
-    .work {
-        height: 1px;
-        background-color: var(--second);
-        width: 100%;
-        margin-top: clamp(1.5rem, 2.3vw, 2.5rem);
-        margin-bottom: clamp(1.5rem, 2.3vw, 2.5rem);
-
-        .work-title {
-            display: flex;
-            width: 70%;
-        }
-
-        .work-description {
-            display: flex;
-            align-items: center;
-            width: 30%;
-        }
-    }
-}
-
-@keyframes globalMove {
-    from {
-        transform: rotate(0deg);
-    }
-
-    to {
-        transform: rotate(360deg);
-    }
-}
-
-@media only screen and (max-width: 720px) {
-
-    .country-box,
-    .description {
-        display: none;
+      h1 {
+        font-size: 6em;
+        text-align: center;
+      }
     }
 
     .victor-image {
-        position: relative;
-        height: 100vh;
-
-        img {
-            position: absolute;
-            bottom: 0;
-            width: fit-content;
-        }
+      position: absolute;
+      bottom: 0;
+      display: flex;
+      justify-content: center;
+      left: 0;
+      right: 0;
+      height: 42em;
+      filter: brightness(1.1) grayscale(1) drop-shadow(4px 7px 15px darkblue);
+      transition: transform 0.3s cubic-bezier(0.1, 0.33, 0.66, 1);
     }
+  }
+}
+
+.intro {
+  background-color: var(--second);
+  position: relative;
+  z-index: 1;
+  padding: 10rem 2rem;
+
+  h4 {
+    font-size: clamp(1.5rem, 4vw, 2.5rem);
+  }
+
+  span {
+    font-size: clamp(1rem, 3vw, 1.5rem);
+  }
+
+  .about-me {
+    display: flex;
+    justify-content: flex-end;
+    margin: 2rem 6rem;
+  }
+}
+
+.recent-works {
+  padding: 10rem 2rem;
+
+  * {
+    color: var(--second);
+    margin: 0;
+  }
+
+  .work {
+    height: 1px;
+    background-color: var(--second);
+    width: 100%;
+    margin-top: clamp(1.5rem, 2.3vw, 2.5rem);
+    margin-bottom: clamp(1.5rem, 2.3vw, 2.5rem);
+
+    .work-title {
+      display: flex;
+      width: 70%;
+    }
+
+    .work-description {
+      display: flex;
+      align-items: center;
+      width: 30%;
+    }
+  }
+}
+
+@keyframes globalMove {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media only screen and (max-width: 720px) {
+  .country-box,
+  .description {
+    display: none;
+  }
+
+  .victor-image {
+    position: relative;
+    height: 100vh;
+
+    img {
+      position: absolute;
+      bottom: 0;
+      width: fit-content;
+    }
+  }
 }
