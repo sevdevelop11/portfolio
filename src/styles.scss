@@ -1,1 +1,35 @@
-/* You can add global styles to this file, and also import other style files */
+:root {
+  --primary: #4c4b54;
+  --second: #f9f7f7;
+  --third: #3f72af;
+  --header-height: 77px;
+}
+
+body,
+html {
+  margin: 0;
+  padding: 0;
+  display: block;
+  font-family: "Comfortaa";
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+  background: rgb(2, 0, 36);
+  background: linear-gradient(
+    135deg,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(47, 79, 79, 1) 35%,
+    rgba(0, 212, 255, 1) 100%
+  );
+  background-repeat: no-repeat;
+  color: var(--primary);
+  text-wrap: balance;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+}

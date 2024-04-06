@@ -1,0 +1,93 @@
+.button {
+  //    width: 100px;
+  //  height: 100px;
+  border-radius: 50%;
+  background-color: #3498db;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  //    font-size: 18px;
+  font-size: 1rem;
+  text-align: center;
+  line-height: 100px;
+  cursor: pointer;
+  position: relative;
+  border: none;
+  overflow: hidden;
+
+  span {
+    position: relative;
+    z-index: 1;
+  }
+
+  .line {
+    position: absolute;
+    width: 40%;
+    height: 1px;
+    background-color: #fff;
+    top: 45%;
+    left: 30%;
+    /* Alinear las líneas al centro */
+    transition: all 0.4s ease-in-out;
+
+    &:last-child {
+      margin-top: 7px;
+    }
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    /* Alineación horizontal al centro */
+    transform: translateX(-50%);
+    /* Alineación horizontal al centro */
+    width: 150%;
+    height: 0%;
+    background-color: black;
+    /* Color del círculo que aparece */
+    transition: height 0.5s ease-in-out;
+    /* Duración de la transición */
+    z-index: 0;
+    border-radius: 50%;
+    transform-origin: bottom center;
+    /* Origen de la transformación en la parte inferior */
+  }
+
+  &:hover {
+    &::before {
+      height: 200%;
+    }
+  }
+
+  
+}
+
+#menu-active {
+    .line {
+      top: 50%;
+      transition: 1s;
+      transform: translateX(0) rotate(0);
+      &:first-child {
+        transition: 1s;
+        transform: translateY(-50%) rotate(45deg);
+        /* Rotar 45 grados la primera línea al hacer hover */
+      }
+
+      &:last-child {
+        margin-top: 0;
+        transition: margin 1s ease-in-out rotate 0.5s ease-in-out;
+        transform: translateY(-50%) rotate(-45deg);
+        /* Rotar -45 grados la segunda línea al hacer hover */
+      }
+    }
+
+    &:hover {
+        opacity: 0.9;
+        &::before {
+          height: 0%;
+        }
+      }
+  }

@@ -1,0 +1,102 @@
+<nav>
+    <div class="credits-top">
+      <div class="btn btn-link btn-left-top">
+        <a
+          href="#"
+          class="btn-click magnetic"
+          data-strength="20"
+          data-strength-text="10"
+        >
+          <span class="btn-text">
+            <div class="credit"><span>©</span></div>
+            <div class="cbd">
+              <span class="code-by">Code by </span
+              ><span class="victor"
+                ><span class="victor-span">Victor</span>
+                <span class="ramirez">Ramirez</span></span
+              >
+            </div>
+          </span>
+        </a>
+      </div>
+    </div>
+  <div id="overlay">
+    <div class="menu">
+      <ul class="links-wrap">
+        <li
+          id="work"
+          class="btn btn-link d-none d-md-inline"
+          [ngClass]="{ active: active === 'work' }"
+          (mousemove)="transform('work', $event)"
+          (mouseleave)="resetTransform('work')"
+        >
+          <a
+            href="/work"
+            class="btn-click magnetic"
+            data-strength="20"
+            data-strength-text="10"
+          >
+            <span class="btn-text">
+              <span class="btn-text-inner">Work</span>
+            </span>
+          </a>
+        </li>
+        <li
+          id="about"
+          class="btn btn-link d-none d-md-inline"
+          (mousemove)="transform('about', $event)"
+          (mouseleave)="resetTransform('about')"
+        >
+          <a
+            href="https://dennissnellenberg.com/about"
+            class="btn-click magnetic"
+            data-strength="20"
+            data-strength-text="10"
+          >
+            <span class="btn-text">
+              <span class="btn-text-inner">About</span>
+            </span>
+          </a>
+        </li>
+        <li
+          id="contact"
+          class="btn btn-link d-none d-md-inline"
+          (mousemove)="transform('contact', $event)"
+          (mouseleave)="resetTransform('contact')"
+        >
+          <a
+            href="https://dennissnellenberg.com/contact"
+            class="btn-click magnetic"
+            data-strength="20"
+            data-strength-text="10"
+          >
+            <span class="btn-text">
+              <span class="btn-text-inner">Contact</span>
+            </span>
+          </a>
+        </li>
+        <li class="btn btn-link btn-menu" style="display: none;">
+          <div
+            class="btn-click magnetic"
+            data-strength="20"
+            data-strength-text="10"
+          >
+            <div class="btn-text">
+              <span class="btn-text-inner">Menu</span>
+            </div>
+          </div>
+        </li>
+      </ul>
+      <app-button id="close" class="close" size="64" idElement="menu-active" (click)="closeMenu()" element="menu"/>
+    </div>
+  </div>
+
+  <app-button
+    id="menu-scroll"
+    class="menu-scroll"
+    element="menu"
+    size="64"
+    idElement="menu-scroll-btn"
+    (click)="openMenu()"
+  />
+</nav>

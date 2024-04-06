@@ -1,0 +1,122 @@
+nav {
+  padding: 0 2rem;
+  display: flex;
+  position: relative;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 5;
+  height: var(--header-height);
+
+  .btn-link {
+    text-decoration: none;
+  }
+
+  .btn-text {
+    font-size: 1.3em;
+    color: var(--second);
+    display: flex;
+    font-family: "Comfortaa";
+    text-shadow: darkblue 2px 3px 4px;
+  }
+
+  .btn-menu {
+    display: none;
+  }
+
+  .ramirez {
+    padding-left: 0.25rem;
+  }
+
+  .links-wrap {
+    display: flex;
+    align-items: center;
+    height: 40px;
+
+    .btn-link {
+      padding: 1.3rem;
+      text-decoration: none;
+      overflow: visible;
+      transition: transform 0.7s cubic-bezier(0.1, 0.33, 0.33, 1);
+      display: flex;
+      justify-content: center;
+      align-items: flex-end;
+
+      &::after {
+        content: "";
+        border-radius: 50%;
+        background-color: white;
+        width: 5px;
+        height: 5px;
+        transition: all 0.5s cubic-bezier(0.5, 0.6, 0.6, 1);
+        transform: scale(0);
+        opacity: 0.1;
+        margin-bottom: -10px;
+      }
+
+      &:hover {
+        transition: text-shadow 0.5s cubic-bezier(0.5, 0.6, 0.6, 1);
+      }
+    }
+  }
+
+  .active::after {
+    opacity: 1 !important;
+    transform: translate(-50%, -50%) scale(1) !important;
+    -webkit-box-shadow: 2px 2px 5px 1px darkblue;
+    -moz-box-shadow: 2px 2px 5px 1px darkblue;
+    box-shadow: 2px 2px 5px 1px darkblue;
+    position: absolute;
+  }
+}
+.menu {
+  transition: 0.5s;
+  border-radius: 50% 0 0 50%;
+}
+.overlay-active {
+  position: fixed;
+  height: 100vh;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  top: 0;
+  right: 0;
+  z-index: 5;
+  display: flex;
+  justify-content: flex-end;
+
+  .menu {
+    border-radius: 25% 0 0 25%;
+    box-shadow: -11px 0px 18px gainsboro;
+    padding: 2rem 2rem 4rem 5rem;
+    display: flex;
+    background-color: black;
+    height: 100vh;
+
+    .close {
+      display: inline;
+    }
+    ul {
+      flex-direction: column;
+      align-self: center;
+      display: flex;
+      justify-content: center;
+    }
+  }
+}
+
+.close {
+  display: none;
+}
+
+#menu-scroll {
+  position: fixed;
+  top: 2rem;
+  right: 2rem;
+  transform: scale(0);
+  transition: transform 0.2s ease-in-out;
+}
+
+@media only screen and (max-width: 720px) {
+  .btn-text {
+    font-size: 0.8em !important;
+  }
+}

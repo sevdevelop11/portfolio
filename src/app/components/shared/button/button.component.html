@@ -1,0 +1,9 @@
+<button [id]="idElement" class="button">
+  <div *ngIf="isMenu">
+    <span class="line"></span>
+    <span class="line"></span>
+  </div>
+  <div *ngIf="!isMenu">
+    <span>{{ element }}</span>
+  </div>
+</button>
