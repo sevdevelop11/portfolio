@@ -21,7 +21,6 @@ export class ButtonComponent {
     let button = document.getElementById(this.idElement);
     button ? button.style.height = `${this.size}px` : '';
     button ? button.style.width = `${this.size}px` : '';
-    console.log(button);
     this.cdr.detectChanges();
   }
 }

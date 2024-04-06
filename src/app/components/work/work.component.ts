@@ -4,7 +4,7 @@ import { NavbarComponent } from '../shared/navbar/navbar.component';
 @Component({
   selector: 'app-work',
   standalone: true,
-  imports: [NavbarComponent],
+  imports: [],
   templateUrl: './work.component.html',
   styleUrl: './work.component.scss'
 })

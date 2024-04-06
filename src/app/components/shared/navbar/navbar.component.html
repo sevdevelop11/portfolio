@@ -1,25 +1,25 @@
 <nav>
-    <div class="credits-top">
-      <div class="btn btn-link btn-left-top">
-        <a
-          href="#"
-          class="btn-click magnetic"
-          data-strength="20"
-          data-strength-text="10"
-        >
-          <span class="btn-text">
-            <div class="credit"><span>©</span></div>
-            <div class="cbd">
-              <span class="code-by">Code by </span
-              ><span class="victor"
-                ><span class="victor-span">Victor</span>
-                <span class="ramirez">Ramirez</span></span
-              >
-            </div>
-          </span>
-        </a>
-      </div>
+  <div class="credits-top">
+    <div class="btn btn-link btn-left-top">
+      <a
+        href="/home"
+        class="btn-click magnetic"
+        data-strength="20"
+        data-strength-text="10"
+      >
+        <span class="btn-text">
+          <div class="credit"><span>©</span></div>
+          <div class="cbd">
+            <span class="code-by">Code by </span
+            ><span class="victor"
+              ><span class="victor-span">Victor</span>
+              <span class="ramirez">Ramirez</span></span
+            >
+          </div>
+        </span>
+      </a>
     </div>
+  </div>
   <div id="overlay">
     <div class="menu">
       <ul class="links-wrap">
@@ -31,7 +31,7 @@
           (mouseleave)="resetTransform('work')"
         >
           <a
-            href="portfolio/work"
+            href="work"
             class="btn-click magnetic"
             data-strength="20"
             data-strength-text="10"
@@ -48,7 +48,7 @@
           (mouseleave)="resetTransform('about')"
         >
           <a
-            href="/about"
+            href="about"
             class="btn-click magnetic"
             data-strength="20"
             data-strength-text="10"
@@ -65,7 +65,7 @@
           (mouseleave)="resetTransform('contact')"
         >
           <a
-            href="/portfolio/contact"
+            href="contact"
             class="btn-click magnetic"
             data-strength="20"
             data-strength-text="10"
@@ -75,7 +75,7 @@
             </span>
           </a>
         </li>
-        <li class="btn btn-link btn-menu" style="display: none;">
+        <li class="btn btn-link btn-menu" style="display: none">
           <div
             class="btn-click magnetic"
             data-strength="20"
@@ -87,7 +87,14 @@
           </div>
         </li>
       </ul>
-      <app-button id="close" class="close" size="64" idElement="menu-active" (click)="closeMenu()" element="menu"/>
+      <app-button
+        id="close"
+        class="close"
+        size="64"
+        idElement="menu-active"
+        (click)="closeMenu()"
+        element="menu"
+      />
     </div>
   </div>
 
