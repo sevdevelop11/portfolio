@@ -27,10 +27,21 @@ nav {
     padding-left: 0.25rem;
   }
 
+
   .links-wrap {
     display: flex;
     align-items: center;
     height: 40px;
+
+    &:hover {
+      .btn-link.active:hover::after {
+        opacity: 1;
+      }  
+      .btn-link.active::after {
+      opacity: 0;
+    }
+  }
+
 
     .btn-link {
       padding: 1.3rem;
@@ -47,27 +58,39 @@ nav {
         background-color: white;
         width: 5px;
         height: 5px;
-        transition: all 0.5s cubic-bezier(0.5, 0.6, 0.6, 1);
+        transition: all 0.4s cubic-bezier(0.5, 0.6, 0.6, 1);
         transform: scale(0);
-        opacity: 0.1;
+        opacity: 0;
         margin-bottom: -10px;
+        position: absolute;
       }
 
       &:hover {
         transition: text-shadow 0.5s cubic-bezier(0.5, 0.6, 0.6, 1);
+
+        &::after {
+          opacity: 1;
+          transform: scale(1);
+          -webkit-box-shadow: 2px 2px 5px 1px darkblue;
+          -moz-box-shadow: 2px 2px 5px 1px darkblue;
+          box-shadow: 2px 2px 5px 1px darkblue;
+          position: absolute;
+        }
+      }
+    }
+
+    .btn-link.active {
+      &::after {
+        opacity: 1;
+        transform: scale(1);
+        -webkit-box-shadow: 2px 2px 5px 1px darkblue;
+        -moz-box-shadow: 2px 2px 5px 1px darkblue;
+        box-shadow: 2px 2px 5px 1px darkblue;
       }
     }
   }
-
-  .active::after {
-    opacity: 1 !important;
-    transform: translate(-50%, -50%) scale(1) !important;
-    -webkit-box-shadow: 2px 2px 5px 1px darkblue;
-    -moz-box-shadow: 2px 2px 5px 1px darkblue;
-    box-shadow: 2px 2px 5px 1px darkblue;
-    position: absolute;
-  }
 }
+
 .menu {
   transition: 0.5s;
   border-radius: 50% 0 0 50%;
@@ -113,6 +136,7 @@ nav {
   right: 2rem;
   transform: scale(0);
   transition: transform 0.2s ease-in-out;
+  z-index: 5;
 }
 
 @media only screen and (max-width: 720px) {

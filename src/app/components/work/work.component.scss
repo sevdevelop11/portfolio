@@ -3,10 +3,49 @@
   height: calc(100vh - var(--header-height));
   .work-title {
     h1 {
+      font-size: 3rem;
       text-align: center;
       margin: 0;
       padding-top: 3rem;
       padding-bottom: 3rem;
+    }
+  }
+
+  .work-description {
+    display: flex;
+    align-items: center;
+    width: 30%;
+
+    span {
+      a {
+        color: black;
+        -webkit-text-stroke: 2px white;
+        font-size: 23px;
+        font-weight: bold;
+      }
+    }
+  }
+
+  .own-projects {
+    padding: 2rem;
+
+    * {
+      color: var(--second);
+      margin: 0;
+    }
+
+    .work {
+      height: 1px;
+      background-color: var(--second);
+      width: 100%;
+      margin-top: clamp(1.5rem, 2.3vw, 2.5rem);
+      margin-bottom: clamp(1.5rem, 2.3vw, 2.5rem);
+
+      .work-title {
+        display: flex;
+        width: 70%;
+      }
+
     }
   }
 }

@@ -3,6 +3,7 @@
     <div class="btn btn-link btn-left-top">
       <a
         href="home"
+        routerLinkActive="active"
         class="btn-click magnetic"
         data-strength="20"
         data-strength-text="10"
@@ -25,13 +26,13 @@
       <ul class="links-wrap">
         <li
           id="work"
+          routerLinkActive="active"
           class="btn btn-link d-none d-md-inline"
-          [ngClass]="{ active: active === 'work' }"
           (mousemove)="transform('work', $event)"
           (mouseleave)="resetTransform('work')"
         >
           <a
-            href="work"
+            routerLink="work"
             class="btn-click magnetic"
             data-strength="20"
             data-strength-text="10"
@@ -43,12 +44,13 @@
         </li>
         <li
           id="about"
+          routerLinkActive="active"
           class="btn btn-link d-none d-md-inline"
           (mousemove)="transform('about', $event)"
           (mouseleave)="resetTransform('about')"
         >
           <a
-            href="about"
+            routerLink="about"
             class="btn-click magnetic"
             data-strength="20"
             data-strength-text="10"
@@ -61,11 +63,12 @@
         <li
           id="contact"
           class="btn btn-link d-none d-md-inline"
+          routerLinkActive="active"
           (mousemove)="transform('contact', $event)"
           (mouseleave)="resetTransform('contact')"
         >
           <a
-            href="contact"
+            routerLink="contact"
             class="btn-click magnetic"
             data-strength="20"
             data-strength-text="10"
@@ -87,14 +90,14 @@
           </div>
         </li>
       </ul>
-      <app-button
+     <!-- <app-button
         id="close"
         class="close"
         size="64"
         idElement="menu-active"
         (click)="closeMenu()"
         element="menu"
-      />
+      />-->
     </div>
   </div>
 
@@ -104,6 +107,7 @@
     element="menu"
     size="64"
     idElement="menu-scroll-btn"
-    (click)="openMenu()"
+    [isMenuOpen]="isMenuOpen"
+    (click)="setMenu()"
   />
 </nav>

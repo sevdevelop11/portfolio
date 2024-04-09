@@ -65,14 +65,14 @@
   
 }
 
-#menu-active {
+.menu-open {
     .line {
       top: 50%;
-      transition: 1s;
+      transition: .5s;
       transform: translateX(0) rotate(0);
       &:first-child {
-        transition: 1s;
         transform: translateY(-50%) rotate(45deg);
+        animation:cubic-bezier(1, 0, 0, 1)
         /* Rotar 45 grados la primera línea al hacer hover */
       }
 
@@ -83,11 +83,4 @@
         /* Rotar -45 grados la segunda línea al hacer hover */
       }
     }
-
-    &:hover {
-        opacity: 0.9;
-        &::before {
-          height: 0%;
-        }
-      }
   }

@@ -2,11 +2,12 @@ import { Component, ElementRef, HostListener, Renderer2 } from '@angular/core';
 import { NavbarComponent } from '../shared/navbar/navbar.component';
 import { SharedService } from '../../services/shared.service';
 import { ButtonComponent } from '../shared/button/button.component';
+import { RecentWorksComponent } from '../shared/recent-works/recent-works.component';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [NavbarComponent, ButtonComponent],
+  imports: [NavbarComponent, ButtonComponent, RecentWorksComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
 })

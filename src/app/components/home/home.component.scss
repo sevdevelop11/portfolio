@@ -161,34 +161,6 @@
   }
 }
 
-.recent-works {
-  padding: 10rem 2rem;
-
-  * {
-    color: var(--second);
-    margin: 0;
-  }
-
-  .work {
-    height: 1px;
-    background-color: var(--second);
-    width: 100%;
-    margin-top: clamp(1.5rem, 2.3vw, 2.5rem);
-    margin-bottom: clamp(1.5rem, 2.3vw, 2.5rem);
-
-    .work-title {
-      display: flex;
-      width: 70%;
-    }
-
-    .work-description {
-      display: flex;
-      align-items: center;
-      width: 30%;
-    }
-  }
-}
-
 @keyframes globalMove {
   from {
     transform: rotate(0deg);

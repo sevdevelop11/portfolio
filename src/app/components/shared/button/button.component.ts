@@ -13,6 +13,15 @@ export class ButtonComponent {
   @Input() size!: string;
 
   isMenu: boolean = false;
+  private _isMenuOpen: boolean = false;
+
+  @Input()
+  set isMenuOpen(value: boolean) {
+    this._isMenuOpen = value;
+  }
+  get isMenuOpen(): boolean {
+    return this._isMenuOpen;
+  }
 
   constructor(private cdr: ChangeDetectorRef) {}
 
