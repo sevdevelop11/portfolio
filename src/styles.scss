@@ -33,3 +33,53 @@ ul {
   list-style-type: none;
   margin: 0;
 }
+
+.py-1 {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+.py-2 {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+.py-3 {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+
+.d-inline {
+  display: inline !important;
+}
+
+.d-flex {
+  display: flex !important;
+}
+
+
+.d-none {
+  display: none !important;
+}
+
+.scale-1 {
+  transform: scale(1) !important;
+}
+
+.text-center {
+  text-align: center !important;
+}
+
+.font-15 {
+  font-size: 1.5rem !important;
+}
+
+@keyframes showPage {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}

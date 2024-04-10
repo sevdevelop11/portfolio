@@ -1,4 +1,4 @@
-import { Component, ElementRef, HostListener, Input } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 import { SharedService } from '../../../services/shared.service';
 import { CommonModule } from '@angular/common';
 import { ButtonComponent } from '../button/button.component';
@@ -16,33 +16,30 @@ export class NavbarComponent {
 
   constructor(private sharedService: SharedService) {}
 
-  setMenu() {
+  toggleMenu() {
+    let btnLinks = document.querySelectorAll('ul .btn-link');
+
     if (!this.isMenuOpen) {
       document.getElementById('overlay')?.classList.add('overlay-active');
       document.documentElement.style.overflow = 'hidden';
-      let btnLinks = Array.from(
-        document.getElementsByClassName(
-          'btn-link'
-        ) as HTMLCollectionOf<HTMLElement>
-      );
 
       for (var i = 0; i < btnLinks.length; i++) {
-        btnLinks[i].style.fontSize = '1.5rem';
+        btnLinks[i].classList.add('font-15');
       }
     } else {
       document.getElementById('overlay')?.classList.remove('overlay-active');
       document.documentElement.style.overflow = 'auto';
-      let btnLinks = Array.from(
-        document.getElementsByClassName(
-          'btn-link'
-        ) as HTMLCollectionOf<HTMLElement>
-      );
-  
+
       for (var i = 0; i < btnLinks.length; i++) {
-        btnLinks[i].style.fontSize = '1rem';
+        btnLinks[i].classList.remove('font-15');
       }
     }
     this.isMenuOpen = !this.isMenuOpen;
+  }
+
+  resetMenu() {
+    this.isMenuOpen = true;
+    this.toggleMenu();
   }
 
   transform(idElemento: string, event: MouseEvent) {

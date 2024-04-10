@@ -1,4 +1,4 @@
-<button [id]="idElement" class="button">
+<button [id]="idElement" class="button" [ngClass]="{'button-open': isMenuOpen}">
   <div *ngIf="isMenu" [ngClass]="{'menu-open': isMenuOpen}">
     <span class="line"></span>
     <span class="line"></span>

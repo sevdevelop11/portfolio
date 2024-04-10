@@ -1,7 +1,13 @@
 <nav>
   <div class="credits-top">
-    <div class="btn btn-link btn-left-top">
+    <div
+      class="btn btn-link btn-left-top py-2"
+      (mousemove)="transform('home', $event)"
+      (mouseleave)="resetTransform('home')"
+      (click)="resetMenu()"
+    >
       <a
+        id="home"
         href="home"
         routerLinkActive="active"
         class="btn-click magnetic"
@@ -26,10 +32,12 @@
       <ul class="links-wrap">
         <li
           id="work"
+          class="btn btn-link"
           routerLinkActive="active"
-          class="btn btn-link d-none d-md-inline"
+          [ngClass]="{'d-flex':this.isMenuOpen}"
           (mousemove)="transform('work', $event)"
           (mouseleave)="resetTransform('work')"
+          (click)="resetMenu()"
         >
           <a
             routerLink="work"
@@ -45,9 +53,11 @@
         <li
           id="about"
           routerLinkActive="active"
-          class="btn btn-link d-none d-md-inline"
+          class="btn btn-link"
+          [ngClass]="{'d-flex':this.isMenuOpen}"
           (mousemove)="transform('about', $event)"
           (mouseleave)="resetTransform('about')"
+          (click)="resetMenu()"
         >
           <a
             routerLink="about"
@@ -62,10 +72,12 @@
         </li>
         <li
           id="contact"
-          class="btn btn-link d-none d-md-inline"
+          class="btn btn-link"
           routerLinkActive="active"
+          [ngClass]="{'d-flex':this.isMenuOpen}"
           (mousemove)="transform('contact', $event)"
           (mouseleave)="resetTransform('contact')"
+          (click)="resetMenu()"
         >
           <a
             routerLink="contact"
@@ -78,11 +90,15 @@
             </span>
           </a>
         </li>
-        <li class="btn btn-link btn-menu" style="display: none">
+        <li
+          class="btn btn-link btn-menu"
+          [ngClass]="{ 'd-none': this.isMenuOpen }"
+        >
           <div
             class="btn-click magnetic"
             data-strength="20"
             data-strength-text="10"
+            (click)="toggleMenu()"
           >
             <div class="btn-text">
               <span class="btn-text-inner">Menu</span>
@@ -90,14 +106,6 @@
           </div>
         </li>
       </ul>
-     <!-- <app-button
-        id="close"
-        class="close"
-        size="64"
-        idElement="menu-active"
-        (click)="closeMenu()"
-        element="menu"
-      />-->
     </div>
   </div>
 
@@ -106,8 +114,9 @@
     class="menu-scroll"
     element="menu"
     size="64"
+    [ngClass]="{'scale-1':this.isMenuOpen}"
     idElement="menu-scroll-btn"
     [isMenuOpen]="isMenuOpen"
-    (click)="setMenu()"
+    (click)="toggleMenu()"
   />
 </nav>

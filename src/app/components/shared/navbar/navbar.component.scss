@@ -12,11 +12,62 @@ nav {
   }
 
   .btn-text {
+    &:has(.credit):hover {
+      .credit {
+        rotate: 360deg;
+      }
+    }
+
     font-size: 1.3em;
     color: var(--second);
     display: flex;
     font-family: "Comfortaa";
     text-shadow: darkblue 2px 3px 4px;
+    position: relative;
+    overflow: hidden;
+    .cbd {
+      overflow: hidden;
+      position: relative;
+      .credit {
+        transition: 1s;
+      }
+      .code-by {
+        position: relative;
+        display: inline-block;
+        transition: 1s;
+      }
+      .victor {
+        .victor-span {
+          position: relative;
+          display: inline-block;
+          padding-left: 0.4rem;
+          transition: 1s;
+        }
+        .ramirez {
+          position: absolute;
+          transition: 1s;
+        }
+      }
+
+      &:hover {
+        .code-by {
+          transform: translateX(-200%);
+        }
+        .victor {
+          .victor-span {
+            transform: translateX(-130%);
+          }
+          .ramirez {
+            transform: translateX(-100%);
+          }
+        }
+      }
+    }
+  }
+
+  .credit {
+    transition: 1s;
+    padding-right: 0.1rem;
   }
 
   .btn-menu {
@@ -27,7 +78,6 @@ nav {
     padding-left: 0.25rem;
   }
 
-
   .links-wrap {
     display: flex;
     align-items: center;
@@ -36,12 +86,11 @@ nav {
     &:hover {
       .btn-link.active:hover::after {
         opacity: 1;
-      }  
+      }
       .btn-link.active::after {
-      opacity: 0;
+        opacity: 0;
+      }
     }
-  }
-
 
     .btn-link {
       padding: 1.3rem;
@@ -51,6 +100,10 @@ nav {
       display: flex;
       justify-content: center;
       align-items: flex-end;
+
+      &:last-child {
+        display: none;
+      }
 
       &::after {
         content: "";
@@ -92,7 +145,7 @@ nav {
 }
 
 .menu {
-  transition: 0.5s;
+  transition: all .5s, background-color 0s, box-shadow ease-in-out 0s;
   border-radius: 50% 0 0 50%;
 }
 .overlay-active {
@@ -113,6 +166,7 @@ nav {
     display: flex;
     background-color: black;
     height: 100vh;
+    animation: showMenu .5s;
 
     .close {
       display: inline;
@@ -140,7 +194,46 @@ nav {
 }
 
 @media only screen and (max-width: 720px) {
+  nav {
+    .overlay-active {
+      .menu {
+        box-shadow: -11px 0px 18px gainsboro;
+        background-color: black;
+        width: 100%;
+        border-radius: 0;
+        justify-content: center;
+        display: flex;
+        padding: 0;
+
+        ul {
+          padding: 0;
+        }
+      }
+    }
+    .links-wrap {
+      .btn-link {
+        display: none;
+        &:last-child {
+          display: inline;
+          &::after {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+
   .btn-text {
     font-size: 0.8em !important;
+  }
+}
+
+@keyframes showMenu {
+  0% {
+    transform: translateX(100%)
+  }
+
+  100% {
+    transform: translateX(0)
   }
 }

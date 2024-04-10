@@ -13,19 +13,14 @@
   .work {
     height: 1px;
     background-color: var(--second);
-    width: 100%;
+    width: 50%;
     margin-top: clamp(1.5rem, 2.3vw, 2.5rem);
     margin-bottom: clamp(1.5rem, 2.3vw, 2.5rem);
+    margin-left: auto;
+    margin-right: auto;
+  }
 
-    .work-title {
-      display: flex;
-      width: 70%;
-    }
-
-    .work-description {
-      display: flex;
-      align-items: center;
-      width: 30%;
-    }
+  .work-title, .work-description {
+    text-align: center;
   }
 }

@@ -1,21 +1,26 @@
+:host {
+  display: block;
+  animation: showPage 1s;
+}
+
 .container {
   color: var(--second);
-  height: calc(100vh - var(--header-height));
   .work-title {
+    display: flex;
+    justify-content: center;
+
     h1 {
       font-size: 3rem;
       text-align: center;
       margin: 0;
       padding-top: 3rem;
       padding-bottom: 3rem;
+      width: 80%;
     }
   }
 
   .work-description {
-    display: flex;
-    align-items: center;
-    width: 30%;
-
+    text-align: center;
     span {
       a {
         color: black;
@@ -37,15 +42,11 @@
     .work {
       height: 1px;
       background-color: var(--second);
-      width: 100%;
+      width: 50%;
       margin-top: clamp(1.5rem, 2.3vw, 2.5rem);
       margin-bottom: clamp(1.5rem, 2.3vw, 2.5rem);
-
-      .work-title {
-        display: flex;
-        width: 70%;
-      }
-
+      margin-left: auto;
+      margin-right: auto;
     }
   }
 }
