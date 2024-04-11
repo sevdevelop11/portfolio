@@ -6,31 +6,98 @@
 .container {
   color: var(--second);
   height: calc(200vh - var(--header-height));
+  margin: 0 clamp(.5rem, 3vw, 2rem);
+
   .contact-title {
     display: flex;
     align-items: center;
-    margin-top: 3rem;
+    margin: clamp(2rem, 5vw, 3rem) 2rem;
 
     h1 {
-      text-align: center;
       margin: 0;
-      font-size: 4rem;
-      padding-top: 4rem;
-      padding-bottom: 3rem;
-      width: 70%;
+      font-size: clamp(1.3rem, 5vw, 8rem);
+      width: clamp(60%, 5vw, 70%);
+      padding-left: clamp(1rem, 5%, 80px);
     }
     .img-box {
       width: 30%;
       img {
         background: #3498db;
         border-radius: 50%;
-        width: 230px;
-        height: 230px;
+        width: clamp(30px, 28vw, 280px);
+        height: clamp(30px, 28vw, 280px);
         background-size: cover;
         object-fit: cover;
         filter: saturate(0.6) drop-shadow(2px 7px 6px gainsboro);
         border: 1px solid gainsboro;
       }
+    }
+  }
+
+  .form-group {
+    display: flex;
+    flex-direction: row;
+    padding-bottom: 1.5rem;
+    .form-data {
+      display: flex;
+      flex-direction: column;
+      padding-left: 1rem;
+      width: clamp(250px, 45vw, 710px);
+      label {
+        font-size: clamp(1rem, 3vw, 2rem);
+      }
+      input,
+      textarea {
+        background-color: rgba(255, 255, 255, 0.1);
+        padding: 0.5rem 1rem;
+        border-radius: 2rem;
+        border: 0;
+        font-size: 1.2rem;
+        color: gainsboro;
+        margin-top: 0.5rem;
+        &:-webkit-autofill,
+        &:-webkit-autofill:hover,
+        &:-webkit-autofill:focus {
+          -webkit-box-shadow: 0 0 0px 1000px rgba(255, 255, 255, 0.1) inset;
+        }
+
+        &::placeholder {
+          color: gray;
+        }
+      }
+
+      textarea {
+        resize: none;
+      }
+    }
+
+    .number {
+      background-color: #3498db;
+      color: #fff;
+      border-radius: 50%;
+      width: 30px;
+      height: 30px;
+      line-height: 30px;
+      text-align: center;
+      margin-bottom: 10px;
+      font-weight: bold;
+    }
+  }
+  .submit {
+    position: relative;
+    height: fit-content;
+    width: calc(100% - minmax(0%, 20%)); //TODO Calculate good with
+    app-button {
+      display: flex;
+      justify-content: center;
+    }
+    .stripe {
+      width: 100%;
+      border-radius: 50%;
+      position: absolute;
+      top: 50%;
+      height: 2px;
+      background-color: gainsboro;
     }
   }
 }
