@@ -5,87 +5,140 @@
       <img src="assets/images/profile-image.webp" />
     </div>
   </div>
-  <div class="contact-form">
-    <form (ngSubmit)="submitForm()" [formGroup]="contactForm">
-      <div class="form-group">
-        <div class="number"><span>01</span></div>
-        <div class="form-data">
-          <label for="name">What's your name?</label>
-          <input
-            type="text"
-            class="form-control"
-            id="name"
-            name="name"
-            placeholder="Ronda White *"
-            required
-            formControlName="name"
-          />
-        </div>
-      </div>
-      <div class="form-group">
-        <div class="number"><span>02</span></div>
-        <div class="form-data">
-          <label for="email">What's your email?</label>
-          <input
-            type="email"
-            class="form-control"
-            id="email"
-            name="email"
-            placeholder="ronda@white.com *"
-            required
-            formControlName="email"
-          />
-        </div>
-      </div>
-      <div class="form-group">
-        <div class="number"><span>03</span></div>
-        <div class="form-data">
-          <label for="organization"
-            >What's the name of your organization?</label
+  <div class="contact">
+    <div class="contact-form">
+      <form (ngSubmit)="submitForm()" [formGroup]="contactForm">
+        <div class="form-group">
+          <div class="number"><span>01</span></div>
+          <div
+            class="form-data"
+            [ngClass]="{ 'not-empty': contactForm.get('name')?.value }"
           >
-          <input
-            type="text"
-            class="form-control"
-            id="organization"
-            name="organization"
-            placeholder="Ronda & White ©️"
-            formControlName="organization"
-          />
+            <label for="name">What's your name?</label>
+            <input
+              type="text"
+              class="form-control"
+              id="name"
+              name="name"
+              placeholder="Ronda White *"
+              required
+              formControlName="name"
+            />
+            <div
+              class="alert"
+              *ngIf="
+                contactForm.get('name')?.invalid &&
+                contactForm.get('name')?.touched
+              "
+            >
+              <span>Please enter a valid name</span>
+            </div>
+          </div>
         </div>
-      </div>
-      <div class="form-group">
-        <div class="number"><span>04</span></div>
-        <div class="form-data">
-          <label for="services">What services are you looking for?</label>
-          <input
-            type="text"
-            class="form-control"
-            id="services"
-            name="services"
-            placeholder="Web Design, Web Development..."
-            formControlName="services"
-          />
+        <div class="form-group">
+          <div class="number"><span>02</span></div>
+          <div
+            class="form-data"
+            [ngClass]="{ 'not-empty': contactForm.get('email')?.value }"
+          >
+            <label for="email">What's your email?</label>
+            <input
+              type="email"
+              class="form-control"
+              id="email"
+              name="email"
+              placeholder="ronda@white.com *"
+              required
+              formControlName="email"
+            />
+            <div
+              class="alert"
+              *ngIf="
+                contactForm.get('email')?.invalid &&
+                contactForm.get('email')?.touched
+              "
+            >
+              <span>Please enter a valid email</span>
+            </div>
+          </div>
         </div>
-      </div>
-      <div class="form-group">
-        <div class="number"><span>05</span></div>
-        <div class="form-data">
-          <label for="message">Your message</label>
-          <textarea
-            class="form-control"
-            id="message"
-            name="message"
-            rows="3"
-            formControlName="message"
-            placeholder="Hello Víctor, can you help me with... *"
-          ></textarea>
+        <div class="form-group">
+          <div class="number"><span>03</span></div>
+          <div
+            class="form-data"
+            [ngClass]="{ 'not-empty': contactForm.get('organization')?.value }"
+          >
+            <label for="organization"
+              >What's the name of your organization?</label
+            >
+            <input
+              type="text"
+              class="form-control"
+              id="organization"
+              name="organization"
+              placeholder="Ronda & White ©️"
+              formControlName="organization"
+            />
+          </div>
         </div>
+        <div class="form-group">
+          <div class="number"><span>04</span></div>
+          <div
+            class="form-data"
+            [ngClass]="{ 'not-empty': contactForm.get('services')?.value }"
+          >
+            <label for="services">What services are you looking for?</label>
+            <input
+              type="text"
+              class="form-control"
+              id="services"
+              name="services"
+              placeholder="Web Design, Web Development..."
+              formControlName="services"
+            />
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="number"><span>05</span></div>
+          <div
+            class="form-data"
+            [ngClass]="{ 'not-empty': contactForm.get('message')?.value }"
+          >
+            <label for="message">Your message</label>
+            <textarea
+              class="form-control"
+              id="message"
+              name="message"
+              rows="3"
+              maxlength="3000"
+              formControlName="message"
+              placeholder="Hello Víctor, can you help me with... *"
+            ></textarea>
+            <div
+              class="alert"
+              *ngIf="
+                contactForm.get('message')?.invalid &&
+                contactForm.get('message')?.touched
+              "
+            >
+              <span>Please enter a text beetween 3 and 3000 characters</span>
+            </div>
+          </div>
+        </div>
+        <div class="submit">
+          <div class="stripe"></div>
+          <app-button type="submit" element="Send it!" size="115"></app-button>
+        </div>
+      </form>
+    </div>
+    <div class="contact-details">
+      <span class="contact-detail-title">Contact details</span>
+      <div class="contact-element">
+        <span>sevdevelop&commat;gmail.com</span>
       </div>
-      <!--<button type="submit" class="btn btn-primary" size="245">Send it!</button>-->
-      <div class="submit">
-        <div class="stripe"></div>
-        <app-button type="submit" element="Send it!" size="115"></app-button>
+      <div class="contact-element">
+        <span>+34 625 48 55 80</span>
       </div>
-    </form>
+    </div>
   </div>
 </div>

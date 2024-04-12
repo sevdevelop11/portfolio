@@ -11,6 +11,7 @@ export class ButtonComponent {
   @Input() idElement: string = new Input();
   @Input() element: string = new Input();
   @Input() size!: string;
+  @Input() disabled!: boolean;
 
   isMenu: boolean = false;
   private _isMenuOpen: boolean = false;
