@@ -1,5 +1,6 @@
 export const environment = {
     production: true,
+    emailjs: 'Z1jyCZozX_0RWb16t',
     firebase: {
         apiKey: 'AIzaSyCfZOEwgAphf0XL66oaoDtkgAKeQKlLmf4',
         authDomain: 'contactform-90103.firebaseapp.com',

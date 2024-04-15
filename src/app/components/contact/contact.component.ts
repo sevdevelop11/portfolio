@@ -8,9 +8,10 @@ import {
 } from '@angular/forms';
 import { ButtonComponent } from '../shared/button/button.component';
 import { CommonModule } from '@angular/common';
-import { SharedService } from '../../services/shared.service';
 import { Firestore, addDoc, collection, setDoc } from '@angular/fire/firestore';
 import { Router } from '@angular/router';
+import emailjs from '@emailjs/browser';
+import { environment } from '../../environments/environment';
 
 @Component({
   selector: 'app-contact',
@@ -33,8 +34,8 @@ export class ContactComponent {
   });
 
   submitForm() {
-    Object.keys(this.contactForm.controls).forEach(field => {
-      const control = this.contactForm.get(field);           
+    Object.keys(this.contactForm.controls).forEach((field) => {
+      const control = this.contactForm.get(field);
       control?.markAsTouched({ onlySelf: true });
     });
 
@@ -48,8 +49,21 @@ export class ContactComponent {
           });
         })
         .finally(() => {
-          this.contactForm.reset();
-          this.router.navigate(['/contact/success']);
+          emailjs.init(environment.emailjs);
+          emailjs
+            .send('default_service', 'template_oyf087l', {
+              name: this.contactForm.value.name,
+              reply_to: this.contactForm.value.email,
+            })
+            .then(
+              (response) => {
+                this.contactForm.reset();
+                this.router.navigate(['/contact/success']);
+              },
+              (err) => {
+                console.log(err);
+              }
+            );
         });
     }
   }
