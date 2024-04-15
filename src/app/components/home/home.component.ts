@@ -35,14 +35,13 @@ export class HomeComponent {
     const victorName = document.getElementById('victorName');
 
     window.addEventListener('scroll', () => {
-      let paraEffect = scrollY;
-      country ? country.style.marginLeft = `-${paraEffect * .4}px` : '';
-      description ? description.style.marginRight = `-${paraEffect * .4}px` : '';
-      victorName ? victorName.style.marginBottom = `${paraEffect * .08}px` : '';
+      country ? country.style.transform = `translateY(-${scrollY * .08}px)` : '';
+      description ? description.style.transform = `translateY(-${scrollY * .08}px)` : '';
+      victorName ? victorName.style.transform = `translateY(-${scrollY * .08}px)` : '';
 
-      country ? country.style.opacity = `${1 - (paraEffect * .002)}` : '';
-      description ? description.style.opacity = `${1 - (paraEffect * .002)}` : '';
-      victor ? victor.style.opacity = `${1 - (paraEffect * .001)}` : '';
+     country ? country.style.opacity = `${1 - (scrollY * .002)}` : '';
+      description ? description.style.opacity = `${1 - (scrollY * .002)}` : '';
+      victor ? victor.style.opacity = `${1 - (scrollY * .001)}` : '';
     })
   }
 }

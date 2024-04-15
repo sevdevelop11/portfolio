@@ -1,11 +1,24 @@
+import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { ElementRef, Injectable } from '@angular/core';
+import { FormContactData } from '../interfaces/form-contact-data';
 
 @Injectable({
   providedIn: 'root'
 })
-export class SharedService {
 
-  constructor() { }
+export class SharedService {
+  
+  urlForm = 'https://docs.google.com/forms/d/e/1FAIpQLScjJwRNKrvHzPmY1LXNJxUW_ajMKWXqTb93a9odMGvrvOfEqg/formResponse';
+
+  fieldMapping: FormContactData = {
+    name: 'entry.2005620554',
+    email: 'entry.1045781291',
+    organization: 'entry.1065046570',
+    services: 'entry.1166974658',
+    message: 'entry.839337160'
+  };
+
+  constructor(private http: HttpClient) { }
 
   resetTransform(idElemento:string) {
     const elemento = document.getElementById(idElemento);

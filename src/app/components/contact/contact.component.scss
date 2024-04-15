@@ -5,8 +5,7 @@
 
 .container {
   color: var(--second);
-  height: calc(200vh - var(--header-height));
-  margin: 0 clamp(0.5rem, 6vw, 5rem);
+  padding: 0 clamp(0.5rem, 6vw, 5rem) 4rem;
 
   .contact-title {
     display: flex;
@@ -61,12 +60,21 @@
           }
           input,
           textarea {
-            background-color: transparent;
+            //            background-color: rgba(255,255,255,0.1);
+            background: rgba(255, 255, 255, 0.1);
+            background: linear-gradient(
+              135deg,
+              rgba(49, 121, 189, 0.1) 0%,
+              rgba(255, 255, 255, 0.1) 48%,
+              rgba(230, 230, 255, 0.1)
+            );
+            border-radius: 0.5rem;
+            padding: 0.5rem;
             border: 0;
             font-size: 1.2rem;
             color: gainsboro;
             margin-top: 0.5rem;
-            width: 100%;
+            width: 90%;
 
             &:focus-visible {
               outline: none;
@@ -78,7 +86,7 @@
             }
 
             &::placeholder {
-              color: gray;
+              color: darkgray;
             }
           }
 
@@ -130,7 +138,9 @@
         width: 100%;
         app-button {
           display: flex;
-          justify-content: center;
+          justify-content: flex-end;
+          animation: translate_button linear forwards;
+          animation-timeline: view();
         }
         .stripe {
           width: 100%;
@@ -148,13 +158,32 @@
       align-items: flex-end;
       .contact-detail-title {
         text-transform: uppercase;
-        color:gray;
+        color: darkgrey;
+        font-weight: bold;
         filter: drop-shadow(2px 4px 6px black);
       }
       .contact-element {
         padding-top: 1rem;
+        position: relative;
         span:nth-child(2) {
-          padding-left: .5rem;
+          padding-left: 0.5rem;
+        }
+
+        &::after {
+          content: '';
+          background-color: white;
+          height: 1px;
+          width: 0;
+          position: absolute;
+          display: block;
+          bottom: -5px;
+          transition: .5s;
+        }
+
+        &:hover {
+          &::after {
+            width: 100%;
+          }
         }
       }
     }
@@ -170,10 +199,23 @@
         order: 1;
         width: 100%;
         padding: 0 1rem 2rem;
-        font-size: .8rem;
+        font-size: 0.8rem;
       }
-
     }
-    
+  }
+}
+
+@media screen and (max-width: 378px) {
+  .container .contact .contact-form .form-group .alert:last-child {
+    bottom: -1rem;
+  }
+}
+
+@keyframes translate_button {
+  from {
+    transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+  }
+  to {
+    transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, -100, 0, 0, 1);
   }
 }

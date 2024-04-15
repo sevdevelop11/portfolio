@@ -1,0 +1,125 @@
+:host {
+  display: block;
+  animation: showPage 1s;
+}
+
+.container {
+  color: var(--second);
+  height: calc(100vh - var(--header-height));
+
+  .row {
+    height: 100%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    transform: translateY(-10%);
+
+    .flex-col {
+      position: relative;
+      display: flex;
+      span {
+        display: inline-flex;
+      }
+    }
+
+    .row-contry {
+      display: flex;
+      flex-wrap: wrap;
+      position: absolute;
+      bottom: -80px;
+      left: 0;
+      right: 0;
+      align-items: center;
+
+      .flex-col {
+        width: 100%;
+        position: relative;
+
+        .stripe {
+          width: 100%;
+          height: 1px;
+          background-color: gainsboro;
+          opacity: .5;
+        }
+
+        app-button {
+          position: absolute;
+          top: 0;
+          right: 0;
+          transform: translate(-50%, -50%);
+          
+
+          border-radius: 50%;
+          .globe {
+            -webkit-animation: globalMove 7s infinite linear;
+            animation: globalMove 7s infinite linear;
+            -moz-animation: globalMove 7s infinite linear;
+            filter: invert(1) blur(0.7px) drop-shadow(1px 1px 3px #3498db);
+            position: absolute;
+            top: 0;
+            right: 0;
+            left: 0;
+            bottom: 0;
+            display: flex;
+            justify-content: center;
+
+            img {
+              width: clamp(3em, 6vw, 7em);
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .success-title {
+    h1 {
+      margin: 0;
+      font-size: clamp(2em, 6vw, 5em);
+      display: flex;
+      flex-direction: column;
+    }
+  }
+
+  .success-description {
+    //    width: 33%;
+    // position: absolute;
+    top: 0;
+    left: 0;
+  }
+}
+
+.overlay-video {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 0;
+  video {
+    object-fit: cover;
+    height: 110vh;
+    position: fixed;
+    width: 100%;
+    filter:brightness(.4);
+
+  }
+}
+
+@media screen and (max-width: 720px) {
+  .container .row {
+    width: 85%;
+    margin-left: auto;
+    margin-right: auto;
+
+    .flex-col {
+      width: 100%;
+      flex-direction: column;
+      gap: 2rem;
+      padding-left: 3rem;
+      padding-right: 3rem;
+    }
+  }
+}

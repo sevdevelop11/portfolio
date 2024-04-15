@@ -1,0 +1,40 @@
+<div *ngIf="!isSuccess" class="round-div"></div>
+<div *ngIf="!isSuccess" class="container">
+  <div class="row" *ngIf="!isContact">
+    <div class="flex-col pb-3 animation-top-slow">
+      <h2>
+        <span>
+          <div class="img-box">
+            <img src="assets/images/profile-image.webp" />
+          </div>
+          Let's work
+        </span>
+        <span> together </span>
+      </h2>
+    </div>
+
+    <div class="flex-col pb-3">
+      <div class="stripe"></div>
+      <app-button
+        routerLink="/contact"
+        element="Get in touch"
+        size="130"
+      ></app-button>
+    </div>
+  </div>
+  <div class="row" [ngClass]="isContact ? 'animation-top' : 'py-4'">
+    <div class="flex-col">
+      <div class="btn btn-out">
+        <a href="mailto:sevdevelop@gmail.com">
+          <i class='bx bxl-gmail'></i>
+          <span>sevdevelop&commat;gmail.com</span>
+        </a>
+      </div>
+      <div class="btn btn-out">
+        <a href="https://wa.me/+34625485580">
+          <i class='bx bxl-whatsapp'></i><span>+34 625 485 580</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>

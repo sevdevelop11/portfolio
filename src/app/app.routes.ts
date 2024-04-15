@@ -3,6 +3,7 @@ import { HomeComponent } from './components/home/home.component';
 import { WorkComponent } from './components/work/work.component';
 import { AboutComponent } from './components/about/about.component';
 import { ContactComponent } from './components/contact/contact.component';
+import { SuccessComponent } from './components/contact/success/success.component';
 
 export const routes: Routes = [
     { path: '', component: HomeComponent },
@@ -11,6 +12,7 @@ export const routes: Routes = [
     { path: 'work', component: WorkComponent},
     { path: 'about', component: AboutComponent},
     { path: 'contact', component: ContactComponent},
+    { path: 'contact/success', component: SuccessComponent}
 
 
 ];

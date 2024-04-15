@@ -24,7 +24,6 @@ nav {
     font-family: "Comfortaa";
     text-shadow: darkblue 2px 3px 4px;
     position: relative;
-    overflow: hidden;
     .cbd {
       overflow: hidden;
       position: relative;
@@ -146,7 +145,7 @@ nav {
 }
 
 .menu {
-  transition: all .5s, background-color 0s, box-shadow ease-in-out 0s;
+  transition: all 0.5s, background-color 0s, box-shadow ease-in-out 0s;
   border-radius: 50% 0 0 50%;
 }
 .overlay-active {
@@ -167,7 +166,7 @@ nav {
     display: flex;
     background-color: black;
     height: 100vh;
-    animation: showMenu .5s;
+    animation: showMenu 0.5s;
 
     .close {
       display: inline;
@@ -196,6 +195,22 @@ nav {
 
 @media only screen and (max-width: 720px) {
   nav {
+    .btn-text {
+      &:hover {
+        .code-by,
+        .victor .victor-span,
+        .victor .ramirez {
+          transform: none !important;
+        }
+      }
+
+      &:has(.credit):hover {
+        .credit {
+          rotate: 0deg;
+        }
+      }
+    }
+
     .overlay-active {
       .menu {
         box-shadow: -11px 0px 18px gainsboro;
@@ -224,17 +239,17 @@ nav {
     }
   }
 
-  .btn-text {
-    font-size: 0.8em !important;
+  nav .btn-text {
+    font-size: 1rem;
   }
 }
 
 @keyframes showMenu {
   0% {
-    transform: translateX(100%)
+    transform: translateX(100%);
   }
 
   100% {
-    transform: translateX(0)
+    transform: translateX(0);
   }
 }

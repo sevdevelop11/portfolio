@@ -11,8 +11,6 @@ html {
   padding: 0;
   display: block;
   font-family: "Comfortaa";
-  scroll-behavior: smooth;
-  overflow-x: hidden;
   background: rgb(2, 0, 36);
   background: linear-gradient(
     135deg,
@@ -27,6 +25,7 @@ html {
 
 a {
   text-decoration: none;
+  color: var(--second);
 }
 
 ul {
@@ -47,6 +46,11 @@ ul {
 .py-3 {
   padding-top: 3rem;
   padding-bottom: 3rem;
+}
+
+.py-4 {
+  padding-top: 4rem;
+  padding-bottom: 4rem;
 }
 
 .d-inline {
@@ -74,6 +78,56 @@ ul {
   font-size: 1.5rem !important;
 }
 
+.pt-1 {
+  padding-top: 1rem !important;
+}
+
+.pt-2 {
+  padding-top: 2rem !important;
+}
+
+.pt-3 {
+  padding-top: 3rem !important;
+}
+
+.pt-4 {
+  padding-top: 4rem !important;
+}
+
+.pt-5 {
+  padding-top: 5rem !important;
+}
+
+.pb-1 {
+  padding-bottom: 1rem !important;
+}
+
+.pb-2 {
+  padding-bottom: 2rem !important;
+}
+
+.pb-3 {
+  padding-bottom: 3rem !important;
+}
+
+.pb-4 {
+  padding-bottom: 4rem !important;
+}
+
+.pb-5 {
+  padding-bottom: 5rem !important;
+}
+
+h1,h2,h3,h4,h5,h6, p, a, li, ul, span {
+  margin: 0;
+  padding: 0;
+}
+
+.animation-top-slow {
+  animation: animation_top_slow linear forwards;
+  animation-timeline: view();
+}
+
 @keyframes showPage {
   0% {
     opacity: 0;
@@ -81,5 +135,14 @@ ul {
 
   100% {
     opacity: 1;
+  }
+}
+
+@keyframes animation_top_slow {
+  from {
+    transform: translateY(0%);
+  }
+  to {
+    transform: translateY(-10%);
   }
 }
